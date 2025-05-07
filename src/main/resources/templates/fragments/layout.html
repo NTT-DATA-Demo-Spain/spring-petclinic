@@ -61,11 +61,6 @@
             <span th:text="#{vets}">Veterinarians</span>
           </li>
 
-          <li th:replace="~{::menuItem ('/vets/nearby','nearbyVets','find nearby vets','map-marker',#{nearbyVets})}">
-            <span class="fa fa-map-marker" aria-hidden="true"></span>
-            <span th:text="#{nearbyVets}">Nearby Vets</span>
-          </li>
-
           <li
             th:replace="~{::menuItem ('/oups','error','trigger a RuntimeException to see how it is handled','exclamation-triangle',#{error})}">
             <span class="fa exclamation-triangle" aria-hidden="true"></span>
