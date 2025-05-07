@@ -15,6 +15,7 @@
  */
 package org.springframework.samples.petclinic.vet;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.data.domain.Page;
@@ -73,6 +74,16 @@ class VetController {
 		Vets vets = new Vets();
 		vets.getVetList().addAll(this.vetRepository.findAll());
 		return vets;
+	}
+
+	@GetMapping("/vets/nearby")
+	public String showNearbyVets(Model model) {
+		// Placeholder logic for nearby vets
+		List<Vet> nearbyVets = new ArrayList<>(vetRepository.findAll()); // Convert
+																			// Collection
+																			// to List
+		model.addAttribute("nearbyVets", nearbyVets);
+		return "vets/nearbyVets";
 	}
 
 }
